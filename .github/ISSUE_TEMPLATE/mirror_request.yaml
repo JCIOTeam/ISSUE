@@ -1,0 +1,48 @@
+name: Mirror request / 镜像请求
+description: Suggest setting up new mirrors / 建议设立新的镜像
+title: "[镜像请求] "
+labels: ["Mirror Request"]
+body:
+  - type: markdown
+    id: introduction
+    attributes:
+      value: |
+        欢迎向 JCIOTeam 提交新镜像请求。如果你希望 JCIOTeam 对某个开源项目设立镜像，请按以下模板填写。
+        If you request JCIOTeam to setup a mirror site for an open-source project, please submit you issue using the following template.
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: 先决条件 (Prerequisites)
+      options:
+        - label: |
+            我已确认这个镜像源从未在 [其他 issues](https://github.com/JCIOTeam/issue) 中讨论过。
+            I am sure that this repo has NEVER been discussed in [other issues]((https://github.com/JCIOTeam/issue).
+          required: true
+        - label: |
+            我已确认这个镜像源没有我选择的镜像站上线。
+            I am sure that this repo has NOT currently be provided by the sites I select.
+          required: true
+  - type: textarea
+    id: name
+    attributes:
+      label: 项目名称与简介 (Project introduction)
+    validations:
+      required: true
+  - type: textarea
+    id: upstream
+    attributes:
+      label: 上游地址与镜像方法 (How to mirror)
+    validations:
+      required: true
+  - type: textarea
+    id: sync_method
+    attributes:
+      label: 镜像大小 (Mirror size)
+    validations:
+      required: false
+  - type: textarea
+    id: more_info
+    attributes:
+      label: 备注 (Note)
+    validations:
+      required: false
